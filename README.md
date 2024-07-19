@@ -1,5 +1,7 @@
 # Powershell Automation Examples
 
+[![Tests Status](https://github.com/elifry/powershell-automation-examples/workflows/ci/badge.svg)](https://github.com/elifry/powershell-automation-examples/actions)
+
 Powershell (7 & up) is a cross platform powerhouse of a scripting language, and is a great low-dependencies option for generating reports, working with repos, and working with databases and files, among other things.
 
 This repo contains a few examples that include good structure and patterns that can kick off the creation of specially built tools and save development time. These examples follow a Medium-High complexity model. It contains over-engineered examples - on purpose - because it is intended to be used as a basis for a system of automation. When using, reduce complexity as necessary.
