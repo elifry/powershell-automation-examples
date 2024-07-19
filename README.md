@@ -6,8 +6,6 @@ This repo contains a few examples that include good structure and patterns that 
 
 Similar scripts could be written in Bash or Python, but both of these are not as consistent across platforms.
 
-Created by Elijah Fry, License MIT.
-
 ## Example 1: Generate a Markdown Analytics Report from API Calls
 
 Context: use API calls to gather data and create a report in markdown. No use of local repos. Uses a local env file for secrets.
@@ -49,3 +47,7 @@ It will generate a sample markdown file and open it for you in VSCode.
     - `sample.env` - Sample env file for testing
 
 > Note: Each example runs all tests for components used in that example, with overlap because they use common components. "Run All Tests/test-all" will only run each test once, without overlap.
+
+---
+
+Created by Elijah Fry, [License MIT](/LICENSE).
