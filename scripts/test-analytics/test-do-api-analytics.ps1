@@ -4,8 +4,6 @@ function ExampleOneTestAnalyticsProducesResult() {
     # Arrange
     if (Test-Path -Path $repoPath/scripts/output) {
         Remove-Item -Path $repoPath/scripts/output/*.* -Recurse
-    } else {
-        Write-Output "The folder does not exist."
     }
     . $repoPath\scripts\general-utilities\load-env.ps1 -file "$repoPath\sample.env"
     . $repoPath\scripts\analytics\do-api-analytics.ps1
