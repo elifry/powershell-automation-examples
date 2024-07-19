@@ -30,6 +30,12 @@ Context: use API calls to gather data and create a report in markdown. No use of
     - `test-example1.ps1` - Tests for everything in this example
   - `analyze-api-items.ps1` - Starting point. Does setup, does analysis, and shows results
 
+### How to run
+
+Run the "Example 1" Run and Debug action in VSCode. Alternatively, you can run the `scripts/analyze-api-items.ps1` script directly in powershell.
+
+It will generate a sample markdown file and open it for you in VSCode.
+
 ## Tests
 
 - 📂`/scripts/`
