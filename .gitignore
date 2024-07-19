@@ -1,0 +1,10 @@
+# Cache & Output files
+cache/
+output/
+testoutput/
+
+# Log files
+*.log
+
+# Personal Environment Files
+.env
