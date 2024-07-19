@@ -7,7 +7,7 @@ function DoAnalytics ($demoFlag) {
 
     if ($demoFlag -eq $true) { Write-Host "Demo flag is on" }
 
-    Write-Host "API Token is: '$API_TOKEN'" # Loaded from env file
+    Write-Host "API Token is: '$API_TOKEN'" # Loaded from env file, don't actually print this in a real script
 
     # Create the output folder if it does not exist
     if (-not (Test-Path $outputFolder)) { New-Item -ItemType Directory -Path $outputFolder | Out-Null }
