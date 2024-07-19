@@ -37,14 +37,16 @@ It will generate a sample markdown file and open it for you in VSCode.
 ## Tests
 
 - 📂`/scripts/`
+  - 📂`/test-analytics/`
+    - `test-do-api-analytics.ps1`
+  - 📂`/test-general-utilities/`
+    - `test-load-env.ps1`
+    - `sample.env` - Sample env file for testing
   - 📂`/test-groups/`
     - `test-all.ps1` - Runs all tests for all examples
       - 🚀 Tied to VSCode Launch Action "Run All Tests"
     - `test-example1.ps1` - Tests for Example 1 (above)
       - 🚀 Tied to  VSCode Launch Action "Example 1 Tests"
-  - 📂`/test-general-utilities/`
-    - `test-load-env.ps1`
-    - `sample.env` - Sample env file for testing
 
 > Note: Each example runs all tests for components used in that example, with overlap because they use common components. "Run All Tests/test-all" will only run each test once, without overlap.
 
