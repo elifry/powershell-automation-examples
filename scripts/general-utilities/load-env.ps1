@@ -3,7 +3,11 @@ param (
     [switch]$verbose = $false
 )
 
-if ($file -eq "") { $file = "$repoPath/.env" } # Set default if none is provided
+# Set default if none is provided
+if ($file -eq "") {
+    $repoPath = $(git rev-parse --show-toplevel)
+    $file = "$repoPath/.env"
+}
 
 if (-not (Test-Path $file)) {
     Write-Host "Error: env file '$file' not valid."
