@@ -1,8 +1,6 @@
 # Powershell Automation Examples
 
-<!-- [![Tests Status](https://github.com/elifry/powershell-automation-examples/workflows/ci/badge.svg)](https://github.com/elifry/powershell-automation-examples/actions) -->
-
-![Tests Status](https://github.com/elifry/powershell-automation-examples/actions/workflows/ci.yml/badge.svg)
+[![Tests Status](https://github.com/elifry/powershell-automation-examples/actions/workflows/ci.yml/badge.svg)](https://github.com/elifry/powershell-automation-examples/actions)
 
 Powershell (7 & up) is a cross platform powerhouse of a scripting language, and is a great low-dependencies option for generating reports, working with repos, and working with databases and files, among other things.
 
