@@ -1,6 +1,8 @@
 # Powershell Automation Examples
 
-[![Tests Status](https://github.com/elifry/powershell-automation-examples/workflows/ci/badge.svg)](https://github.com/elifry/powershell-automation-examples/actions)
+<!-- [![Tests Status](https://github.com/elifry/powershell-automation-examples/workflows/ci/badge.svg)](https://github.com/elifry/powershell-automation-examples/actions) -->
+
+![Tests Status](https://github.com/elifry/powershell-automation-examples/actions/workflows/ci.yml/badge.svg)
 
 Powershell (7 & up) is a cross platform powerhouse of a scripting language, and is a great low-dependencies option for generating reports, working with repos, and working with databases and files, among other things.
 
@@ -48,7 +50,7 @@ It will generate a sample markdown file and open it for you in VSCode.
     - [test-all.ps1](/scripts/test-groups/test-all.ps1) - Runs all tests for all examples
       - 🚀 Tied to VSCode Launch Action "Run All Tests"
     - [test-example1.ps1](/scripts/test-groups/test-example1.ps1) - Tests for Example 1 (above)
-      - 🚀 Tied to  VSCode Launch Action "Example 1 Tests"
+      - 🚀 Tied to VSCode Launch Action "Example 1 Tests"
 
 > Note: Each example runs all tests for components used in that example, with overlap because they use common components. "Run All Tests/test-all" will only run each test once, without overlap.
 
