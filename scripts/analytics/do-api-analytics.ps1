@@ -1,9 +1,14 @@
 # Returns the file path of the output file so that the calling script does not have to worry about tracking the output file path
 function DoAnalytics ($demoFlag) {
     $repoPath = $(git rev-parse --show-toplevel)
-    $outputFolder = "$repoPath\scripts\output"
     $resultsFileName = "api-results.md"
-    $resultsFilePath = "$outputFolder\$resultsFileName"
+    if ($IsWindows) {
+        $outputFolder = "$repoPath\scripts\output"
+        $resultsFilePath = "$outputFolder\$resultsFileName"
+    } else {
+        $outputFolder = "$repoPath/scripts/output"
+        $resultsFilePath = "$outputFolder/$resultsFileName"
+    }
 
     if ($demoFlag -eq $true) { Write-Host "Demo flag is on" }
 
