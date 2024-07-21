@@ -2,13 +2,13 @@
 
 [![Tests Status](https://github.com/elifry/powershell-automation-examples/actions/workflows/ci.yml/badge.svg)](https://github.com/elifry/powershell-automation-examples/actions)
 
-Powershell (7 & up) is a cross platform powerhouse of a scripting language, and is a great low-dependencies option for generating reports, working with repos, and working with databases and files, among other things.
+Powershell (7+) kick-starting material for automation, written with a lot of structure in place.
 
-This repo contains a few examples that include good structure and patterns that can kick off the creation of specially built tools and save development time. These examples follow a Medium-High complexity model. It contains over-engineered examples - on purpose - because it is intended to be used as a basis for a system of automation. When using, reduce complexity as necessary.
-
-Similar scripts could be written in Bash or Python, but both of these are not as consistent across platforms.
+All examples are multi-platform, unless otherwise stated.
 
 ## Example 1: Generate a Markdown Analytics Report from API Calls
+
+Generates a sample markdown file and opens it for you in VSCode.
 
 Context: use API calls to gather data and create a report in markdown. No use of local repos. Uses a local env file for secrets.
 
@@ -33,8 +33,6 @@ Context: use API calls to gather data and create a report in markdown. No use of
 ### How to run
 
 Run the "Example 1" Run and Debug action in VSCode. Alternatively, you can run the `scripts/analyze-api-items.ps1` script directly in powershell.
-
-It will generate a sample markdown file and open it for you in VSCode.
 
 ## Tests
 
