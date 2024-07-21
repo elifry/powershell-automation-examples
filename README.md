@@ -12,6 +12,11 @@ Generates a sample markdown file and opens it for you in VSCode.
 
 Context: use API calls to gather data and create a report in markdown. No use of local repos. Uses a local env file for secrets.
 
+TODO:
+
+- Hit an API endpoint to get real data
+- Make use of the cache folder and use cache loading
+
 ### Structure
 
 - 📂`/scripts/`
