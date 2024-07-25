@@ -30,12 +30,58 @@ function DoAnalytics ($demoFlag) {
     $results = "This is a simulated result.`n`nThis is a new line.`n`nAn example of a ``code snippet`` within the output.`n`n> Note: This is a note.`n`n- This is a bullet point.`n- This is another bullet point.`n`n"
     $results = $results + "### Full Data`n`n"
     $results = $results + "| Column 1 | Column 2 | Column 3 |`n| --- | --- | --- |`n"
-    $data = [ordered]@{
-        1 = @("Row 1, Column 1", "Row 1, Column 2", "Row 1, Column 3")
-        2 = @("Row 2, Column 1", "Row 2, Column 2", "Row 2, Column 3")
-        3 = @("Row 3, Column 1", "Row 3, Column 2", "Row 3, Column 3")
-        4 = @("Row 4, Column 1", "Row 4, Column 2", "Row 4, Column 3")
+
+
+    # Simulated data using https://meowfacts.herokuapp.com/ sample API, hit 4 times for a new cat fact
+    # Track the number of words, most common word, and most common letter
+
+    $data = @{}
+    $rows = 6 # Do X times
+
+    for ($i = 0; $i -lt $rows; $i++) {
+
+        # Hit the endpoint with GET
+        $response = Invoke-WebRequest -Uri "https://meowfacts.herokuapp.com/" -Method Get -UseBasicParsing | ConvertFrom-Json
+        $responseBody = $response.data
+
+        # Split the response into words and get the count of the highest word
+        $words = $responseBody.ToLower() -split " "
+        $wordCount = @{}
+        foreach ($word in $words) {
+            if ($wordCount.ContainsKey($word)) {
+                $wordCount[$word]++
+            } else {
+                $wordCount[$word] = 1
+            }
+        }
+        $mostCommonWord = $wordCount.GetEnumerator() | Sort-Object -Property Value -Descending | Select-Object -First 1
+        
+        # If the word is only found once, it is not the most common word so just print a custom message
+        if ($mostCommonWord.Value -eq 1) {
+            $mostCommonWord = "No word found more than once"
+        }
+
+        # Get the most common letter
+        $letters = $responseBody.ToLower() -replace " ", "" -split ""
+        $letterCount = @{}
+        foreach ($letter in $letters) {
+            if ($letterCount.ContainsKey($letter)) {
+                $letterCount[$letter]++
+            } else {
+                $letterCount[$letter] = 1
+            }
+        }
+        $mostCommonLetter = $letterCount.GetEnumerator() | Sort-Object -Property Value -Descending | Select-Object -First 1
+
+        # If the letter is only found once, it is not the most common letter so just print a custom message
+        if ($mostCommonLetter.Value -eq 1) {
+            $mostCommonLetter = "No letter found more than once"
+        }
+
+        # Add to $data in this format - 1 = @("Row 1, Column 1", "Row 1, Column 2", "Row 1, Column 3")
+        $data[$i] = @($responseBody, "Most common word: '$mostCommonWord'", "Most common letter: '$mostCommonLetter'")
     }
+
     foreach ($row in $data.GetEnumerator()) {
         $results = $results + "| " + $row.Value[0] + " | " + $row.Value[1] + " | " + $row.Value[2] + " |`n"
     }

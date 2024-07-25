@@ -14,7 +14,6 @@ Context: use API calls to gather data and create a report in markdown. No use of
 
 TODO:
 
-- Hit an API endpoint to get real data
 - Make use of the cache folder and use cache loading
 
 ### Structure
