@@ -42,7 +42,7 @@ It will look something like this:
 
 Run the "Example 1" Run and Debug action in VSCode. Alternatively, you can run the `scripts/analyze-api-items.ps1` script directly in powershell.
 
-## Tests
+## All Tests
 
 - 📂`/scripts/`
   - 📂`/test-analytics/`
