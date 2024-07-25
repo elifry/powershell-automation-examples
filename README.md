@@ -16,6 +16,10 @@ TODO:
 
 - Make use of the cache folder and use cache loading
 
+It will look something like this:
+
+> ![Example 1](/resources/example1.png)
+
 ### Structure
 
 - 📂`/scripts/`
